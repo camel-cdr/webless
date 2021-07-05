@@ -116,7 +116,7 @@ static void configure_settings(WebKitSettings *ws)
 static char *prompt(const char *prompt, const char *last)
 {
 	char *cmd = g_strdup_printf(
-			"/usr/bin/echo \"%s\" | /usr/bin/dmenu -p \"%s\"",
+			"echo \"%s\" | dmenu -p \"%s\"",
 			last, prompt);
 	FILE *f = popen(cmd, "r");
 	g_free(cmd);
@@ -571,3 +571,4 @@ int main(int argc, char **argv)
 	gtk_main();
 	exit(EXIT_SUCCESS);
 }
+

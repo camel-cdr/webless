@@ -1,10 +1,11 @@
+.POSIX:
 
 PREFIX = /usr/local
 MANPREFIX = $(PREFIX)/share/man
 LIBDIR = $(PREFIX)/lib/webless
 
 webless: webless.c
-	${CC} $< -o $@ `pkg-config --cflags --libs webkit2gtk-4.0` -Wall -Wextra -O3
+	${CC} webless.c -o $@ `pkg-config --cflags --libs webkit2gtk-4.0` -Wall -Wextra -O3
 
 run: webless
 	./webless
